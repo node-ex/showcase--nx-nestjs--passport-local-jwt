@@ -7,7 +7,10 @@ import { Request } from 'express';
 export const LOCAL_STRATEGY_NAME = 'local';
 
 @Injectable()
-export class LocalStrategy extends PassportStrategy(Strategy) {
+export class LocalStrategy extends PassportStrategy(
+  Strategy,
+  LOCAL_STRATEGY_NAME,
+) {
   static usernameField = 'username';
   static passwordField = 'password';
 
