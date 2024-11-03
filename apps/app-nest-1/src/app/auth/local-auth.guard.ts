@@ -5,6 +5,8 @@ import { LOCAL_STRATEGY_NAME } from './local.strategy';
 @Injectable()
 export class LocalAuthGuard extends AuthGuard(LOCAL_STRATEGY_NAME) {
   override canActivate(context: any) {
+    // Add your custom authentication logic here
+    // for example, call super.logIn(request) to establish a session.
     return super.canActivate(context);
   }
 
