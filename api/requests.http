@@ -1,1 +1,15 @@
-GET http://localhost:3000/api
+# @name login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "test-username",
+  "password": "test-password"
+}
+
+###
+
+@token = {{login.response.body.accessToken}}
+
+GET http://localhost:3000/api/auth/dummy
+Authorization: Bearer {{token}}
