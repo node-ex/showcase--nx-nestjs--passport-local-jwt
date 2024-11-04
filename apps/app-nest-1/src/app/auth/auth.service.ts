@@ -9,7 +9,6 @@ export class AuthService {
   constructor(private readonly jwtService: JwtService) {}
 
   validateUser(username: string, password: string) {
-    console.log('AuthService.validateUser()', username, password);
     if (
       username === this.hardcodedUsername &&
       password === this.hardcodedPassword
